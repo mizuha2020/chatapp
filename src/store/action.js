@@ -46,6 +46,7 @@ export const auth = (uid, authKey) => {
         CometChat.login(uid, authKey).then((user) => {
 
             if(user) {
+                console.log(user.name);
                 dispatch(authSuccess(user));
             } else {
                 dispatch(authFail(user));
