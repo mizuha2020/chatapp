@@ -349,10 +349,10 @@ class CometChatMessageActions extends React.PureComponent {
 		let tooltip = (
 			<ul css={messageActionStyle(this.props, this.context, this.state.loggedInUser)} className="message__actions">
 				{reactToMessage}
-				{threadedChats}
+				{/* {threadedChats} */}
 				{editMessage}
 				{deleteMessage}
-				{messageInPrivate}
+				{/* {messageInPrivate} */}
 				{translateMessage}
 			</ul>
 		);

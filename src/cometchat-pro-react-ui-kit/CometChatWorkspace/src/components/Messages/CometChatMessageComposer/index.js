@@ -1203,7 +1203,8 @@ class CometChatMessageComposer extends React.PureComponent {
 			editPreview = (
 				<div css={editPreviewContainerStyle(this.context, keyframes)}>
 					<div css={previewHeadingStyle()}>
-						<div css={previewTextStyle()}>{Translator.translate("EDIT_MESSAGE", this.context.language)}</div>
+						{/* <div css={previewTextStyle()}>{Translator.translate("EDIT_MESSAGE", this.context.language)}</div> */}
+						<div css={previewTextStyle()}>Chỉnh sửa tin nhắn</div>
 						<span css={previewCloseStyle(closeIcon, this.context)} onClick={this.closeEditPreview}></span>
 					</div>
 					<div>{messageText}</div>

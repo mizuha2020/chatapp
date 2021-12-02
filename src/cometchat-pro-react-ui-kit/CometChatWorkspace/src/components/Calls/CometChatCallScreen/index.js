@@ -427,7 +427,8 @@ class CometChatCallScreen extends React.PureComponent {
 
     render() {
 
-        const resizeText = Translator.translate("RESIZE", this.props.lang);
+        // const resizeText = Translator.translate("RESIZE", this.props.lang);
+        const resizeText = "Thay đổi kích thước";
         let iconView = (<i css={iconStyle(minimizeIcon)} title={resizeText}></i>);
         if (this.state.maximized === false) {
             iconView = (<i css={iconStyle(maximizeIcon)} title={resizeText}></i>);

@@ -129,9 +129,11 @@ class CometChatMessageHeader extends React.Component {
 
 		if (this.context.item.status === CometChat.USER_STATUS.OFFLINE && this.context.item.lastActiveAt) {
 			const lastActive = this.context.item.lastActiveAt * 1000;
-			const messageDate = dateFormat(lastActive, "dS mmm yyyy, h:MM TT");
+			// const messageDate = dateFormat(lastActive, "dS mmm yyyy, h:MM TT");
+			const messageDate = dateFormat(lastActive, " h:MM TT");
 
-			status = `${Translator.translate("LAST_ACTIVE_AT", this.props.lang)}: ${messageDate}`;
+			// status = `${Translator.translate("LAST_ACTIVE_AT", this.props.lang)}: ${messageDate}`;
+			status = `Online lần cuối lúc: ${messageDate}`;
 		} else if (this.context.item.status === CometChat.USER_STATUS.OFFLINE) {
 			status = Translator.translate("OFFLINE", this.props.lang);
 		} else if (this.context.item.status === CometChat.USER_STATUS.ONLINE) {
@@ -225,10 +227,12 @@ class CometChatMessageHeader extends React.Component {
 		};
 
 		if (this.context.type === CometChat.ACTION_TYPE.TYPE_GROUP && this.context.type === item.receiverType && this.context.item.guid === item.receiverId) {
-			const typingText = `${item.sender.name} ${Translator.translate("IS_TYPING", this.context.language)}`;
+			// const typingText = `${item.sender.name} ${Translator.translate("IS_TYPING", this.context.language)}`;
+			const typingText = `${item.sender.name} đang nhập`;
 			showTyping(typingText);
 		} else if (this.context.type === CometChat.ACTION_TYPE.TYPE_USER && this.context.type === item.receiverType && this.context.item.uid === item.sender.uid) {
-			const typingText = `${Translator.translate("TYPING", this.context.language)}`;
+			// const typingText = `${Translator.translate("TYPING", this.context.language)}`;
+			const typingText = `Đang nhập`;
 			showTyping(typingText);
 		}
 	};
